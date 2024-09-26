@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script"; // Import Script component from Next.js
 import "./globals.css";
 
 const geistSans = localFont({
@@ -7,6 +8,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -29,7 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <script src="./node_modules/preline/dist/preline.js"></script>
+        {/* Use the Script component for loading the external script */}
+        <Script src="./node_modules/preline/dist/preline.js" strategy="afterInteractive" />
       </body>
     </html>
   );

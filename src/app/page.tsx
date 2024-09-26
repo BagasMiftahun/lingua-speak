@@ -3,7 +3,6 @@
 
 import "regenerator-runtime/runtime";
 
-import Image from "next/image";
 import TextArea from "@/components/Inputs/TextArea";
 import SpeechRecognitionComponent from "@/components/SpeechRecognition/SpeechRecognition";
 import { ChangeEvent, useState } from "react";
